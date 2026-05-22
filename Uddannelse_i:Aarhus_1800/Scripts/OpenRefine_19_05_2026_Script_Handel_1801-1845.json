@@ -1,0 +1,1249 @@
+[
+  {
+    "op": "core/column-addition",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "baseColumnName": "occupation",
+    "expression": "grel:join([cells.get(\"occupation\").value, cells.get(\"erhverv\").value], '')",
+    "onError": "keep-original",
+    "newColumnName": "Erhverv",
+    "columnInsertIndex": 30,
+    "description": "Create column Erhverv at index 30 based on column occupation using expression grel:join([cells.get(\"occupation\").value, cells.get(\"erhverv\").value], '')"
+  },
+  {
+    "op": "core/column-reorder",
+    "columnNames": [
+      "File",
+      "År",
+      "sogn",
+      "amt",
+      "id",
+      "loknr",
+      "lokalitet",
+      "bygning",
+      "famnr",
+      "fnavn",
+      "enavn",
+      "Køn",
+      "alder",
+      "civilstand",
+      "notater",
+      "husnr",
+      "county",
+      "parish",
+      "location",
+      "location_number",
+      "building",
+      "house_number",
+      "family_number",
+      "lastnames",
+      "firstnames",
+      "gender",
+      "age",
+      "marital_status",
+      "Erhverv",
+      "notes",
+      "county_of_birth",
+      "parish_of_birth"
+    ],
+    "description": "Reorder columns"
+  },
+  {
+    "op": "core/column-addition",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "baseColumnName": "gender",
+    "expression": "grel:join([coalesce(cells.get(\"gender\").value, ''), coalesce(cells.get(\"Køn\").value, '')], '')",
+    "onError": "keep-original",
+    "newColumnName": "køn",
+    "columnInsertIndex": 26,
+    "description": "Create column køn at index 26 based on column gender using expression grel:join([coalesce(cells.get(\"gender\").value, ''), coalesce(cells.get(\"Køn\").value, '')], '')"
+  },
+  {
+    "op": "core/column-reorder",
+    "columnNames": [
+      "File",
+      "År",
+      "sogn",
+      "amt",
+      "id",
+      "loknr",
+      "lokalitet",
+      "bygning",
+      "famnr",
+      "fnavn",
+      "enavn",
+      "alder",
+      "civilstand",
+      "notater",
+      "husnr",
+      "county",
+      "parish",
+      "location",
+      "location_number",
+      "building",
+      "house_number",
+      "family_number",
+      "lastnames",
+      "firstnames",
+      "køn",
+      "age",
+      "marital_status",
+      "Erhverv",
+      "notes",
+      "county_of_birth",
+      "parish_of_birth"
+    ],
+    "description": "Reorder columns"
+  },
+  {
+    "op": "core/column-addition",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "baseColumnName": "firstnames",
+    "expression": "grel:join([coalesce(cells.get(\"firstnames\").value, ''), coalesce(cells.get(\"fnavn\").value, '')], '')",
+    "onError": "keep-original",
+    "newColumnName": "fornavn",
+    "columnInsertIndex": 24,
+    "description": "Create column fornavn at index 24 based on column firstnames using expression grel:join([coalesce(cells.get(\"firstnames\").value, ''), coalesce(cells.get(\"fnavn\").value, '')], '')"
+  },
+  {
+    "op": "core/column-reorder",
+    "columnNames": [
+      "File",
+      "År",
+      "sogn",
+      "amt",
+      "id",
+      "loknr",
+      "lokalitet",
+      "bygning",
+      "famnr",
+      "enavn",
+      "alder",
+      "civilstand",
+      "notater",
+      "husnr",
+      "county",
+      "parish",
+      "location",
+      "location_number",
+      "building",
+      "house_number",
+      "family_number",
+      "lastnames",
+      "fornavn",
+      "køn",
+      "age",
+      "marital_status",
+      "Erhverv",
+      "notes",
+      "county_of_birth",
+      "parish_of_birth"
+    ],
+    "description": "Reorder columns"
+  },
+  {
+    "op": "core/column-addition",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "baseColumnName": "lastnames",
+    "expression": "grel:join([coalesce(cells.get(\"lastnames\").value, ''), coalesce(cells.get(\"enavn\").value, '')], '')",
+    "onError": "keep-original",
+    "newColumnName": "efternavn",
+    "columnInsertIndex": 22,
+    "description": "Create column efternavn at index 22 based on column lastnames using expression grel:join([coalesce(cells.get(\"lastnames\").value, ''), coalesce(cells.get(\"enavn\").value, '')], '')"
+  },
+  {
+    "op": "core/column-reorder",
+    "columnNames": [
+      "File",
+      "År",
+      "sogn",
+      "amt",
+      "id",
+      "loknr",
+      "lokalitet",
+      "bygning",
+      "famnr",
+      "alder",
+      "civilstand",
+      "notater",
+      "husnr",
+      "county",
+      "parish",
+      "location",
+      "location_number",
+      "building",
+      "house_number",
+      "family_number",
+      "efternavn",
+      "fornavn",
+      "køn",
+      "age",
+      "marital_status",
+      "Erhverv",
+      "notes",
+      "county_of_birth",
+      "parish_of_birth"
+    ],
+    "description": "Reorder columns"
+  },
+  {
+    "op": "core/column-addition",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "baseColumnName": "marital_status",
+    "expression": "grel:join([coalesce(cells.get(\"marital_status\").value, ''), coalesce(cells.get(\"civilstand\").value, '')], '')",
+    "onError": "keep-original",
+    "newColumnName": "Civilstand",
+    "columnInsertIndex": 25,
+    "description": "Create column Civilstand at index 25 based on column marital_status using expression grel:join([coalesce(cells.get(\"marital_status\").value, ''), coalesce(cells.get(\"civilstand\").value, '')], '')"
+  },
+  {
+    "op": "core/column-reorder",
+    "columnNames": [
+      "File",
+      "År",
+      "sogn",
+      "amt",
+      "id",
+      "loknr",
+      "lokalitet",
+      "bygning",
+      "famnr",
+      "alder",
+      "notater",
+      "husnr",
+      "county",
+      "parish",
+      "location",
+      "location_number",
+      "building",
+      "house_number",
+      "family_number",
+      "efternavn",
+      "fornavn",
+      "køn",
+      "age",
+      "Civilstand",
+      "Erhverv",
+      "notes",
+      "county_of_birth",
+      "parish_of_birth"
+    ],
+    "description": "Reorder columns"
+  },
+  {
+    "op": "core/column-addition",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "baseColumnName": "location_number",
+    "expression": "grel:join([coalesce(cells.get(\"location_number\").value, ''), coalesce(cells.get(\"loknr\").value, '')], '')",
+    "onError": "keep-original",
+    "newColumnName": "Loknr",
+    "columnInsertIndex": 16,
+    "description": "Create column Loknr at index 16 based on column location_number using expression grel:join([coalesce(cells.get(\"location_number\").value, ''), coalesce(cells.get(\"loknr\").value, '')], '')"
+  },
+  {
+    "op": "core/column-reorder",
+    "columnNames": [
+      "File",
+      "År",
+      "sogn",
+      "amt",
+      "id",
+      "lokalitet",
+      "bygning",
+      "famnr",
+      "alder",
+      "notater",
+      "husnr",
+      "county",
+      "parish",
+      "location",
+      "Loknr",
+      "building",
+      "house_number",
+      "family_number",
+      "efternavn",
+      "fornavn",
+      "køn",
+      "age",
+      "Civilstand",
+      "Erhverv",
+      "notes",
+      "county_of_birth",
+      "parish_of_birth"
+    ],
+    "description": "Reorder columns"
+  },
+  {
+    "op": "core/column-addition",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "baseColumnName": "building",
+    "expression": "grel:join([coalesce(cells.get(\"building\").value, ''), coalesce(cells.get(\"bygning\").value, '')], '')",
+    "onError": "keep-original",
+    "newColumnName": "Bygning",
+    "columnInsertIndex": 16,
+    "description": "Create column Bygning at index 16 based on column building using expression grel:join([coalesce(cells.get(\"building\").value, ''), coalesce(cells.get(\"bygning\").value, '')], '')"
+  },
+  {
+    "op": "core/column-addition",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "baseColumnName": "location",
+    "expression": "grel:join([coalesce(cells.get(\"location\").value, ''), coalesce(cells.get(\"lokalitet\").value, '')], '')",
+    "onError": "keep-original",
+    "newColumnName": "Lokalitet",
+    "columnInsertIndex": 14,
+    "description": "Create column Lokalitet at index 14 based on column location using expression grel:join([coalesce(cells.get(\"location\").value, ''), coalesce(cells.get(\"lokalitet\").value, '')], '')"
+  },
+  {
+    "op": "core/column-reorder",
+    "columnNames": [
+      "File",
+      "År",
+      "sogn",
+      "amt",
+      "id",
+      "bygning",
+      "famnr",
+      "alder",
+      "notater",
+      "husnr",
+      "county",
+      "parish",
+      "Lokalitet",
+      "Loknr",
+      "building",
+      "Bygning",
+      "house_number",
+      "family_number",
+      "efternavn",
+      "fornavn",
+      "køn",
+      "age",
+      "Civilstand",
+      "Erhverv",
+      "notes",
+      "county_of_birth",
+      "parish_of_birth"
+    ],
+    "description": "Reorder columns"
+  },
+  {
+    "op": "core/column-removal",
+    "columnName": "building",
+    "description": "Remove column building"
+  },
+  {
+    "op": "core/column-addition",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "baseColumnName": "house_number",
+    "expression": "grel:join([coalesce(cells.get(\"house_number\").value, ''), coalesce(cells.get(\"husnr\").value, '')], '')",
+    "onError": "keep-original",
+    "newColumnName": "Husnr",
+    "columnInsertIndex": 16,
+    "description": "Create column Husnr at index 16 based on column house_number using expression grel:join([coalesce(cells.get(\"house_number\").value, ''), coalesce(cells.get(\"husnr\").value, '')], '')"
+  },
+  {
+    "op": "core/column-reorder",
+    "columnNames": [
+      "File",
+      "År",
+      "sogn",
+      "amt",
+      "id",
+      "bygning",
+      "famnr",
+      "alder",
+      "notater",
+      "county",
+      "parish",
+      "Lokalitet",
+      "Loknr",
+      "Bygning",
+      "Husnr",
+      "family_number",
+      "efternavn",
+      "fornavn",
+      "køn",
+      "age",
+      "Civilstand",
+      "Erhverv",
+      "notes",
+      "county_of_birth",
+      "parish_of_birth"
+    ],
+    "description": "Reorder columns"
+  },
+  {
+    "op": "core/column-addition",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "baseColumnName": "county",
+    "expression": "grel:join([coalesce(cells.get(\"county\").value, ''), coalesce(cells.get(\"amt\").value, '')], '')",
+    "onError": "keep-original",
+    "newColumnName": "Amt",
+    "columnInsertIndex": 10,
+    "description": "Create column Amt at index 10 based on column county using expression grel:join([coalesce(cells.get(\"county\").value, ''), coalesce(cells.get(\"amt\").value, '')], '')"
+  },
+  {
+    "op": "core/column-reorder",
+    "columnNames": [
+      "File",
+      "År",
+      "sogn",
+      "id",
+      "bygning",
+      "famnr",
+      "alder",
+      "notater",
+      "Amt",
+      "parish",
+      "Lokalitet",
+      "Loknr",
+      "Bygning",
+      "Husnr",
+      "family_number",
+      "efternavn",
+      "fornavn",
+      "køn",
+      "age",
+      "Civilstand",
+      "Erhverv",
+      "notes",
+      "county_of_birth",
+      "parish_of_birth"
+    ],
+    "description": "Reorder columns"
+  },
+  {
+    "op": "core/column-addition",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "baseColumnName": "parish",
+    "expression": "grel:join([coalesce(cells.get(\"parish\").value, ''), coalesce(cells.get(\"sogn\").value, '')], '')",
+    "onError": "keep-original",
+    "newColumnName": "Sogn",
+    "columnInsertIndex": 10,
+    "description": "Create column Sogn at index 10 based on column parish using expression grel:join([coalesce(cells.get(\"parish\").value, ''), coalesce(cells.get(\"sogn\").value, '')], '')"
+  },
+  {
+    "op": "core/column-reorder",
+    "columnNames": [
+      "File",
+      "År",
+      "id",
+      "bygning",
+      "famnr",
+      "alder",
+      "notater",
+      "Amt",
+      "Sogn",
+      "Lokalitet",
+      "Loknr",
+      "Bygning",
+      "Husnr",
+      "family_number",
+      "efternavn",
+      "fornavn",
+      "køn",
+      "age",
+      "Civilstand",
+      "Erhverv",
+      "notes",
+      "county_of_birth",
+      "parish_of_birth"
+    ],
+    "description": "Reorder columns"
+  },
+  {
+    "op": "core/column-addition",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "baseColumnName": "family_number",
+    "expression": "grel:join([coalesce(cells.get(\"family_number\").value, ''), coalesce(cells.get(\"famnr\").value, '')], '')",
+    "onError": "keep-original",
+    "newColumnName": "Famnr",
+    "columnInsertIndex": 14,
+    "description": "Create column Famnr at index 14 based on column family_number using expression grel:join([coalesce(cells.get(\"family_number\").value, ''), coalesce(cells.get(\"famnr\").value, '')], '')"
+  },
+  {
+    "op": "core/column-reorder",
+    "columnNames": [
+      "File",
+      "År",
+      "id",
+      "bygning",
+      "alder",
+      "notater",
+      "Amt",
+      "Sogn",
+      "Lokalitet",
+      "Loknr",
+      "Bygning",
+      "Husnr",
+      "Famnr",
+      "efternavn",
+      "fornavn",
+      "køn",
+      "age",
+      "Civilstand",
+      "Erhverv",
+      "notes",
+      "county_of_birth",
+      "parish_of_birth"
+    ],
+    "description": "Reorder columns"
+  },
+  {
+    "op": "core/column-addition",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "baseColumnName": "age",
+    "expression": "grel:join([coalesce(cells.get(\"age\").value, ''), coalesce(cells.get(\"alder\").value, '')], '')",
+    "onError": "keep-original",
+    "newColumnName": "Alder",
+    "columnInsertIndex": 17,
+    "description": "Create column Alder at index 17 based on column age using expression grel:join([coalesce(cells.get(\"age\").value, ''), coalesce(cells.get(\"alder\").value, '')], '')"
+  },
+  {
+    "op": "core/column-reorder",
+    "columnNames": [
+      "File",
+      "År",
+      "id",
+      "bygning",
+      "notater",
+      "Amt",
+      "Sogn",
+      "Lokalitet",
+      "Loknr",
+      "Bygning",
+      "Husnr",
+      "Famnr",
+      "efternavn",
+      "fornavn",
+      "køn",
+      "Alder",
+      "Civilstand",
+      "Erhverv",
+      "notes",
+      "county_of_birth",
+      "parish_of_birth"
+    ],
+    "description": "Reorder columns"
+  },
+  {
+    "op": "core/column-addition",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "baseColumnName": "notater",
+    "expression": "grel:join([coalesce(cells.get(\"notater\").value, ''), coalesce(cells.get(\"notes\").value, '')], '')",
+    "onError": "keep-original",
+    "newColumnName": "Notater",
+    "columnInsertIndex": 5,
+    "description": "Create column Notater at index 5 based on column notater using expression grel:join([coalesce(cells.get(\"notater\").value, ''), coalesce(cells.get(\"notes\").value, '')], '')"
+  },
+  {
+    "op": "core/column-reorder",
+    "columnNames": [
+      "File",
+      "År",
+      "id",
+      "bygning",
+      "Notater",
+      "Amt",
+      "Sogn",
+      "Lokalitet",
+      "Loknr",
+      "Bygning",
+      "Husnr",
+      "Famnr",
+      "efternavn",
+      "fornavn",
+      "køn",
+      "Alder",
+      "Civilstand",
+      "Erhverv",
+      "county_of_birth",
+      "parish_of_birth"
+    ],
+    "description": "Reorder columns"
+  },
+  {
+    "op": "core/column-removal",
+    "columnName": "county_of_birth",
+    "description": "Remove column county_of_birth"
+  },
+  {
+    "op": "core/column-removal",
+    "columnName": "parish_of_birth",
+    "description": "Remove column parish_of_birth"
+  },
+  {
+    "op": "core/column-move-first",
+    "columnName": "Erhverv",
+    "description": "Move column Erhverv to the beginning"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "Erhverv",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "Købmand"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Købmand"
+      }
+    ],
+    "description": "Mass edit cells in column Erhverv"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "Erhverv",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "høker"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Købmand"
+      }
+    ],
+    "description": "Mass edit cells in column Erhverv"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "Erhverv",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "gårdmand, handelsmand"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Købmand"
+      }
+    ],
+    "description": "Mass edit cells in column Erhverv"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "Erhverv",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "handel"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Købmand"
+      }
+    ],
+    "description": "Mass edit cells in column Erhverv"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "Erhverv",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "handelskommis"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Købmand"
+      }
+    ],
+    "description": "Mass edit cells in column Erhverv"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "Erhverv",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "handelsmand"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Købmand"
+      }
+    ],
+    "description": "Mass edit cells in column Erhverv"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "Erhverv",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "handelselev"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Købmand"
+      }
+    ],
+    "description": "Mass edit cells in column Erhverv"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "Erhverv",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "handelslærling"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Købmand"
+      }
+    ],
+    "description": "Mass edit cells in column Erhverv"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "Erhverv",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "handelsrejsende"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Købmand"
+      }
+    ],
+    "description": "Mass edit cells in column Erhverv"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "Erhverv",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "handelsvolontør"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Købmand"
+      }
+    ],
+    "description": "Mass edit cells in column Erhverv"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "Erhverv",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "hans broder, handelslærling"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Købmand"
+      }
+    ],
+    "description": "Mass edit cells in column Erhverv"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "Erhverv",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "husmand, kvæghandler"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Købmand"
+      }
+    ],
+    "description": "Mass edit cells in column Erhverv"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "Erhverv",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "høkerie"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Købmand"
+      }
+    ],
+    "description": "Mass edit cells in column Erhverv"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "Erhverv",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "høker og værtshusholder"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Købmand"
+      }
+    ],
+    "description": "Mass edit cells in column Erhverv"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "Erhverv",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "industrihandler"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Købmand"
+      }
+    ],
+    "description": "Mass edit cells in column Erhverv"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "Erhverv",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "kaptajn og købmand"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Købmand"
+      }
+    ],
+    "description": "Mass edit cells in column Erhverv"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "Erhverv",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "købmand"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Købmand"
+      }
+    ],
+    "description": "Mass edit cells in column Erhverv"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "Erhverv",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "købmand og agent"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Købmand"
+      }
+    ],
+    "description": "Mass edit cells in column Erhverv"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "Erhverv",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "købmand og borgerrepræsentant"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Købmand"
+      }
+    ],
+    "description": "Mass edit cells in column Erhverv"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "Erhverv",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "købmand og lysestøber"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Købmand"
+      }
+    ],
+    "description": "Mass edit cells in column Erhverv"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "Erhverv",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "købmand og skipper"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Købmand"
+      }
+    ],
+    "description": "Mass edit cells in column Erhverv"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "Erhverv",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "købmand, associeret"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Købmand"
+      }
+    ],
+    "description": "Mass edit cells in column Erhverv"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "Erhverv",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "købmand, borgerlig rådmand"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Købmand"
+      }
+    ],
+    "description": "Mass edit cells in column Erhverv"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "Erhverv",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "købmand, justitsråd"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Købmand"
+      }
+    ],
+    "description": "Mass edit cells in column Erhverv"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "Erhverv",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "købmand, logerende"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Købmand"
+      }
+    ],
+    "description": "Mass edit cells in column Erhverv"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "Erhverv",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "købmand, logerer"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Købmand"
+      }
+    ],
+    "description": "Mass edit cells in column Erhverv"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "Erhverv",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "lever af fiskehandel"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Købmand"
+      }
+    ],
+    "description": "Mass edit cells in column Erhverv"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "Erhverv",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "lever af håndarbejde og lidt handel"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Købmand"
+      }
+    ],
+    "description": "Mass edit cells in column Erhverv"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "Erhverv",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "spækhøker"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Købmand"
+      }
+    ],
+    "description": "Mass edit cells in column Erhverv"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "Erhverv",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "spækhøkerske"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Købmand"
+      }
+    ],
+    "description": "Mass edit cells in column Erhverv"
+  },
+  {
+    "op": "core/row-keep-matched",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "Erhverv",
+          "expression": "value",
+          "columnName": "Erhverv",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "Købmand",
+                "l": "Købmand"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "description": "Keep matching rows"
+  }
+]
